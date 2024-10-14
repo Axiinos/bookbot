@@ -2,18 +2,36 @@ def main():
 
     # Get path to book
     book_path = "books/frankenstein.txt"
+    
+    # Print the start of output
+    print(f"--- Analyzing the book {book_path} --- \n")
+        
         
     # Get the text from the book and count the words
     text = get_bok_text(book_path)
-    print(f"Text from the book:\n {text}")
-    
     word_c = word_count(text)
-    print(f"{word_c} number of words found in the book")
+    print(f"Word Count:\n{word_c} number of words found in the book\n")
     
     # Count characters
     char_counts = character_count(text)
-    print("character counts:", char_counts)
     
+    # Sort the characters by their count
+    print(f"Character Count: \n")
+    sorting(char_counts)
+
+    print(f"--- End of analysis ---")
+    
+def sorting(char_counts):
+    
+    # Sort the characters by their count
+    sorted_chars = sorted(char_counts.items(), key=lambda x: x[1], reverse=True)
+    
+    # Print the sorted characters
+    for char, count in sorted_chars:
+        print(f"The letter {char} encountered : {count}\n")
+    
+    return sorted_chars
+
 def character_count(text):
     
     # initialize the count
