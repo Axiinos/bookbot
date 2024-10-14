@@ -24,7 +24,6 @@ def character_count(text):
         if char in counts:
             counts[char] += 1
         
-        
     return counts
 
 def word_count(text):
