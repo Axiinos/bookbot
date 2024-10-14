@@ -1,7 +1,7 @@
 def main():
 
     # Get path to book
-    book_path = "books/frankenstein.txt"
+    book_path = str(input())
     
     # Print the start of output
     print(f"--- Analyzing the book {book_path} --- \n")
